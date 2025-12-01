@@ -1,36 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
-    <head>
-        <title>
-            Phishing Detector
-        </title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    </head>
-    <body>
-        <div class="background">
-            <div class="gradient-blob"></div>
-            <div class="gradient-blob"></div>
-            <div class="gradient-blob"></div>
-        </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background">
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+        <div class="gradient-blob"></div>
+    </div>
 
-        <main>
-            <h1>Phishing Detector</h1>
-            <p class="subtitle">E-mail Phishing Detector with 97% accuracy</p>
+    <main>
+        <h1>Phishing Detector</h1>
+        <p class="subtitle">E-mail Phishing Detector with 97% accuracy</p>
 
-            <div class="cards-container">
-                <div class="card" data-rotation-factor="2">
+        <div class="cards-container">
+            <div class="card" data-rotation-factor="2">
+                <form method="POST" action="/" id="phishingForm">
                     <div class="card-content">
-                        <h2>Card title</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, qui! Distinctio adipisci odio molestiae quasi.</p>
-                        <div class="card-footer">
-                            <button class="card-button">Detect</button>
+                        <h2>Email Analysis</h2>
+                        <div class="input-group">
+                            <textarea 
+                                id="email-text" 
+                                name="mail"
+                                placeholder="Paste the email content here..."
+                                required
+                            ></textarea>
                         </div>
-                    </div>%
-                </div>
+                        <div class="card-footer">
+                            <button type="submit" class="card-button">Detect</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </main> 
-        <script src="{{ url_for('static', filename='js/app.js') }}"></script>           
-    </body>
+        </div>
+    </main>
 
+    <!-- Result Popup -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-card" id="popupCard">
+            <!-- Loading State -->
+            <div class="popup-content loading" id="loadingState">
+                <div class="loader"></div>
+                <p class="loading-text">Analyzing email...</p>
+            </div>
 
+            <!-- Result State -->
+            <div class="popup-content result hidden" id="resultState">
+                <div class="result-icon" id="resultIcon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="result-text" id="resultText">Safe Email</h3>
+                <p class="result-description" id="resultDescription">This email appears to be legitimate.</p>
+                <button class="close-button" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
 </html>
