@@ -32,12 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Form submission handling
     const form = document.getElementById("phishingForm");
-    const popupOverlay = document.getElementById("popupOverlay");
-    const loadingState = document.getElementById("loadingState");
-    const resultState = document.getElementById("resultState");
-    const resultIcon = document.getElementById("resultIcon");
-    const resultText = document.getElementById("resultText");
-    const resultDescription = document.getElementById("resultDescription");
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -50,34 +44,29 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = new FormData(form);
 
         try {
-            // Submit form to server
-            const response = await fetch("/", {
+            // Submit form to the detect API endpoint
+            const response = await fetch("/detect", {
                 method: "POST",
                 body: formData
             });
 
-            const html = await response.text();
+            const data = await response.json();
             
-            // Parse the response to extract the result
-            // The server should return the result in a specific format
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, "text/html");
-            const resultElement = doc.querySelector("#detectionResult");
-            
-            let result = "Safe Email"; // default
-            if (resultElement) {
-                result = resultElement.textContent.trim();
-            }
+            console.log("API Response:", data); // Debug log
 
             // Simulate minimum loading time for better UX
             setTimeout(() => {
-                showResult(result);
+                if (data.success) {
+                    showResult(data.result, data.is_phishing);
+                } else {
+                    showResult("Error", false);
+                }
             }, 1500);
 
         } catch (error) {
             console.error("Error:", error);
             setTimeout(() => {
-                showResult("Error");
+                showResult("Error", false);
             }, 1500);
         }
     });
@@ -96,7 +85,7 @@ function showLoading() {
     resultState.classList.add("hidden");
 }
 
-function showResult(result) {
+function showResult(result, isPhishing) {
     const loadingState = document.getElementById("loadingState");
     const resultState = document.getElementById("resultState");
     const resultIcon = document.getElementById("resultIcon");
@@ -107,8 +96,7 @@ function showResult(result) {
     loadingState.classList.add("hidden");
     resultState.classList.remove("hidden");
 
-    // Determine if phishing or safe
-    const isPhishing = result.toLowerCase().includes("phishing email");
+    console.log("Showing result:", result, "Is Phishing:", isPhishing); // Debug log
 
     if (isPhishing) {
         resultIcon.className = "result-icon phishing";
