@@ -271,7 +271,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Dataset source: [Add your dataset source]
+- Dataset source: [https://www.kaggle.com/datasets/subhajournal/phishingemails]
 - Inspired by modern web design trends
 - Built with ❤️ using Flask and scikit-learn
 
