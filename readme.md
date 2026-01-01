@@ -1,4 +1,4 @@
-# 🛡️ Phishing Email Detector
+# Phishing Email Detector
 
 A beautiful, modern web application that uses machine learning to detect phishing emails with 97% accuracy. Built with Flask, scikit-learn, and a stunning gradient UI.
 
@@ -7,17 +7,17 @@ A beautiful, modern web application that uses machine learning to detect phishin
 ![Flask](https://img.shields.io/badge/Flask-2.0+-lightgrey)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-## ✨ Features
+## Features
 
-- 🎯 **High Accuracy**: 97% accurate phishing detection using Logistic Regression
-- 🎨 **Modern UI**: Beautiful gradient background with glassmorphism design
-- 🔄 **Real-time Analysis**: Instant email analysis with animated loading states
-- 📱 **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
-- 🎭 **3D Card Effects**: Interactive 3D tilt effects on hover
-- 💫 **Smooth Animations**: Fluid transitions and glowing result indicators
-- 🟢🔴 **Visual Feedback**: Color-coded results (Green = Safe, Red = Phishing)
+- **High Accuracy**: 97% accurate phishing detection using Logistic Regression
+- **Modern UI**: Beautiful gradient background with glassmorphism design
+- **Real-time Analysis**: Instant email analysis with animated loading states
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
+- **3D Card Effects**: Interactive 3D tilt effects on hover
+- **Smooth Animations**: Fluid transitions and glowing result indicators
+- **Visual Feedback**: Color-coded results (Green = Safe, Red = Phishing)
 
-## 🖼️ Screenshots
+## Screenshots
 
 ### Main Interface
 Clean, modern interface with animated gradient background and glassmorphic card design.
@@ -28,7 +28,7 @@ Red glowing indicator with clear warning message when phishing is detected.
 ### Safe Email
 Green glowing indicator confirming the email is safe and legitimate.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -71,7 +71,7 @@ Green glowing indicator confirming the email is safe and legitimate.
    
    Navigate to `http://127.0.0.1:5000`
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 phishing-detector/
@@ -91,7 +91,7 @@ phishing-detector/
 └── README.md                   # This file
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### Model Training
 
@@ -123,7 +123,7 @@ app.run(
 )
 ```
 
-## 🎨 UI Customization
+## UI Customization
 
 The entire UI is customizable through CSS variables in `static/css/styles.css`:
 
@@ -140,7 +140,7 @@ The entire UI is customizable through CSS variables in `static/css/styles.css`:
 }
 ```
 
-## 🧪 API Endpoints
+## API Endpoints
 
 ### `GET /`
 Renders the main page with the detection interface.
@@ -170,7 +170,7 @@ API endpoint for programmatic access.
 }
 ```
 
-## 📊 Model Performance
+## Model Performance
 
 - **Algorithm**: Logistic Regression with TF-IDF Vectorization
 - **Accuracy**: ~97%
@@ -178,7 +178,7 @@ API endpoint for programmatic access.
 - **Training Split**: 80% training, 20% testing
 - **Stop Words**: English stop words removed
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 ### Backend
 - **Flask**: Web framework
@@ -199,7 +199,7 @@ API endpoint for programmatic access.
 - **3D Transforms**: Interactive tilt effects
 - **Backdrop Filter**: Blur effects
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Model file not found
 ```
@@ -240,7 +240,7 @@ ModuleNotFoundError: No module named 'sklearn'
 pip install -r requirements.txt
 ```
 
-## 📝 Requirements
+## Requirements
 
 ```
 scikit-learn>=1.0.0
@@ -249,7 +249,7 @@ numpy>=1.21.0
 flask>=2.0.0
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -259,33 +259,33 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👤 Author
+## Author
 
 **Siddharth Mathur**
 - GitHub: [@SiddharthMathur01](https://github.com/SiddharthMathur01)
 - Email: 16mathursiddharth@gmail.com
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Dataset source: [https://www.kaggle.com/datasets/subhajournal/phishingemails]
 - Inspired by modern web design trends
-- Built with ❤️ using Flask and scikit-learn
+- Built with care using Flask and scikit-learn
 
-## 📈 Future Enhancements
+## Future Enhancements
 
-- [ ] Add email history tracking
-- [ ] Implement user authentication
-- [ ] Support for multiple languages
-- [ ] Export detection reports
-- [ ] Batch email analysis
-- [ ] Integration with email clients
-- [ ] Advanced analytics dashboard
-- [ ] Real-time threat intelligence updates
+- Add email history tracking
+- Implement user authentication
+- Support for multiple languages
+- Export detection reports
+- Batch email analysis
+- Integration with email clients
+- Advanced analytics dashboard
+- Real-time threat intelligence updates
 
 ---
 
-Made with ❤️ and Python | ⭐ Star this repo if you find it helpful!
+Made with Python | Star this repo if you find it helpful!
